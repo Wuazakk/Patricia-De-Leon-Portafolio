@@ -1,51 +1,137 @@
 ---
-interface Props {
-	title: string;
-}
 
-const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Patricia De León</title>
+  </head>
+  <body class="h-full">
+    <div
+      id="nav-bg"
+      class="flex flex-col justify-between h-screen w-1/4 min-w-fit max-w-80 fixed top-0 left-0 text-white p-4 overflow-y-auto pl-10"
+    >
+      <div>
+        <h1 class="text-3xl my-6 font-semibold">Patricia De León</h1>
+        <nav>
+          <ul class="text-decoration-none">
+            <li
+              class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+            >
+              <a href="/">Home</a>
+            </li>
+            <li
+              class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+            >
+              <a href="/Dancer">Dancer</a>
+            </li>
+            <li
+              class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+            >
+              <a href="/Teacher">Teacher</a>
+            </li>
+            <li
+              class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+            >
+              <a href="/Choreographer">Choreographer</a>
+            </li>
+            <li
+              class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+            >
+              <a href="/About">About Me</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="pl-6 my-10">
+        <button
+          class="py-3 px-5 rounded-lg transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300"
+          >Contact Me</button
+        >
+      </div>
+    </div>
+    <slot />
+  </body>
 </html>
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  html {
+    font-family: "Lora", system-ui, sans-serif;
+    color: #fff;
+  }
+  #nav-bg {
+    background-color: #141517;
+  }
+  .nav-item {
+    padding: 8px 0; /* Adjust as needed */
+  }
+
+  /* Define styles for the dot */
+  .nav-item a::before {
+    content: "";
+    display: inline-block;
+    width: 8px; /* Size of the dot */
+    height: 8px; /* Size of the dot */
+    margin-right: 8px; /* Spacing between dot and text */
+    border-radius: 50%;
+    background-color: transparent; /* Initial color of the dot */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+
+  /* Hover styles for the dot */
+  .nav-item:hover a::before {
+    background-color: #fff; /* Color of the dot when hovered */
+  }
+
+  /* Active (selected) styles for the dot */
+  .nav-item.active a::before {
+    background-color: #fff; /* Color of the dot when selected */
+  }
+  @font-face {
+    font-family: "Titillium";
+    src: url(/fonts/TitilliumWeb-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Titillium";
+    src: url(/fonts/TitilliumWeb-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Lora";
+    src: url(/fonts/Lora-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Lora";
+    src: url(/fonts/Lora-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Lora";
+    src: url(/fonts/Lora-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Lora";
+    src: url(/fonts/Lora-SemiBold.ttf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
 </style>
