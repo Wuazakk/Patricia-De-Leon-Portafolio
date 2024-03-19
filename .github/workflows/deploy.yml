@@ -27,11 +27,6 @@ jobs:
           # node-version: 20 # The specific version of Node that should be used to build your site. Defaults to 20. (optional)
           package-manager: pnpm@latest
 
-      - name: Copy public folder to deployment directory
-        run: |
-          mkdir -p build  
-          cp -r public/* build/
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
