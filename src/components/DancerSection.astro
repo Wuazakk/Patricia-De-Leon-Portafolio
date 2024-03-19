@@ -1,0 +1,103 @@
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 p-10">
+  <div class="grid gap-2">
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/1.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/26.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/18.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+  </div>
+  <div class="grid gap-2">
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/4.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/22.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/27.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+  </div>
+  <div class="grid gap-2">
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/7.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/8.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+  </div>
+  <div class="grid gap-2">
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/10.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <img
+        class="h-auto max-w-full rounded-lg"
+        src="/public/photos/12.jpg"
+        alt="Me Dancing"
+      />
+    </div>
+  </div>
+</div>
+
+<style>
+  .image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ensure the container takes full width */
+    height: auto; /* Allow height to adjust based on image */
+    max-width: 100%; /* Ensure the image doesn't overflow the container */
+    max-height: 100%; /* Ensure the image doesn't overflow the container */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    border-radius: 1rem;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .image-container img {
+    transition: transform 0.5s;
+  }
+
+  .image-container:hover img {
+    transform: scale(1.1);
+  }
+</style>
