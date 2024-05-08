@@ -4,10 +4,17 @@ import DancerSection from "../components/DancerSection.astro";
 ---
 
 <Layout>
-  <main class="h-full">
+  <main>
     <div id="Home" class="section min-h-screen">
-      <h1 class="">Home</h1>
-      <p class=""></p>
+      <img
+        src="/public/photos/homeprofile.png"
+        alt="home profile"
+        class="h-[600px] w-[400px] lg:h-[750px] lg:w-[500px] mx-auto pt-20 unselectable"
+      />
+      <h1 class="text-3xl pt-10 quote opacity-60">
+        “And those who were seen dancing were thought to be insane by those who
+        could not hear the music.”
+      </h1>
     </div>
     <div id="Dancer" class="section min-h-screen bg-white">
       <DancerSection />
@@ -29,11 +36,8 @@ import DancerSection from "../components/DancerSection.astro";
 
 <style>
   #Home {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.822),
-        rgba(39, 37, 37, 0.541)
-      ),
-      url("/public/photos/bg10.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.349)),
+      url("/public/photos/homebg.jpg");
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,5 +52,29 @@ import DancerSection from "../components/DancerSection.astro";
     height: fit-content;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .quote {
+    font-family: "itim";
+    color: white;
+    text-align: center;
+  }
+
+  .unselectable {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+  }
+
+  @font-face {
+    font-family: "itim";
+    src: url(/public/fonts/Itim-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
 </style>
