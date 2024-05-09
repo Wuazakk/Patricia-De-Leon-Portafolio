@@ -33,36 +33,6 @@ import NavBar from "../components/NavBar.astro";
   main {
     flex: 1;
   }
-  #nav-bg {
-    background-color: #141517;
-    min-height: 100vh;
-  }
-  .nav-item {
-    padding: 8px 0; /* Adjust as needed */
-  }
-
-  /* Define styles for the dot */
-  .nav-item a::before {
-    content: "";
-    display: inline-block;
-    width: 8px; /* Size of the dot */
-    height: 8px; /* Size of the dot */
-    margin-right: 8px; /* Spacing between dot and text */
-    border-radius: 50%;
-    background-color: transparent; /* Initial color of the dot */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-
-  /* Hover styles for the dot */
-  .nav-item:hover a::before {
-    background-color: #fff; /* Color of the dot when hovered */
-  }
-
-  /* Active (selected) styles for the dot */
-  .nav-item.active a::before {
-    background-color: #fff; /* Color of the dot when selected */
-  }
-
   h1 {
     font-family: "montserrat";
   }
