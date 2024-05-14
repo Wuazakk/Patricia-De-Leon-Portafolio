@@ -1,37 +1,46 @@
+<div class="header h-[55px]">
+  <h1 class="text-md text-center pt-4">PATRICIA DE LEÓN</h1>
+</div>
+<div class="burger-menu">
+  <input type="checkbox" id="burger" />
+  <label for="burger" class="burger">
+    <img src="/icons/burger-menu-black.svg" class="nav-icon" />
+  </label>
+</div>
 <div
-  id="nav-bg"
+  id="nav-menu"
   class="flex flex-col justify-between sticky h-full min-w-fit max-w-80 top-0 left-0 text-white p-4 pl-5"
 >
   <div>
     <h1
-      class="text-md sm:text-lg md:text-lg lg:text-lg xl:text-lg my-6 mx-auto"
+      class="text-md sm:text-lg md:text-lg lg:text-2xl xl:text-2xl my-6 mx-auto"
     >
       PATRICIA DE LEÓN
     </h1>
     <nav>
-      <ul class="text-decoration-none text-sm">
+      <ul class="text-decoration-none text-lg">
         <li
-          class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+          class="nav-item text-gray-400 opacity-80 hover:text-white hover:opacity-100 transition"
         >
           <a href="/">Home</a>
         </li>
         <li
-          class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+          class="nav-item text-gray-400 opacity-80 hover:text-white hover:opacity-100 transition"
         >
           <a href="/Dancer">Dancer</a>
         </li>
         <li
-          class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+          class="nav-item text-gray-400 opacity-80 hover:text-white hover:opacity-100 transition"
         >
           <a href="/Teacher">Teacher</a>
         </li>
         <li
-          class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+          class="nav-item text-gray-400 opacity-80 hover:text-white hover:opacity-100 transition"
         >
           <a href="/Choreographer">Choreographer</a>
         </li>
         <li
-          class="nav-item text-gray-300 opacity-80 hover:text-white hover:opacity-100 transition"
+          class="nav-item text-gray-400 opacity-80 hover:text-white hover:opacity-100 transition"
         >
           <a href="/About">About Me</a>
         </li>
@@ -41,7 +50,7 @@
   <div class="pl-6 my-10">
     <button
       id="contact-me"
-      class="py-3 px-5 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+      class="py-3 px-5 rounded-lg transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 text-lg"
       >Contact Me</button
     >
   </div>
@@ -49,18 +58,31 @@
 
 <style>
   /* Additional styles */
-  .menu-icon {
-    cursor: pointer;
-  }
   #contact-me:hover {
     background-color: #c85c5c;
   }
-  #nav-bg {
+  #nav-menu {
     background-color: #141517;
     min-height: 100vh;
   }
   .nav-item {
-    padding: 8px 0;
+    padding: 12px 0;
+  }
+
+  .nav-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+  }
+  .header {
+    background-color: rgb(20, 21, 23);
+    display: none;
+  }
+  #burger {
+    display: none;
+  }
+  #burger:checked ~ #nav-menu {
+    display: block;
   }
 
   /* Define styles for the dot */
@@ -72,7 +94,10 @@
     margin-right: 8px; /* Spacing between dot and text */
     border-radius: 50%;
     background-color: transparent; /* Initial color of the dot */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    transition: background-color 0.5s ease; /* Smooth transition */
+  }
+  .burger-menu {
+    display: none;
   }
 
   /* Hover styles for the dot */
@@ -87,11 +112,17 @@
 
   /* Hide the menu by default on small screens */
   @media (max-width: 768px) {
-    #nav-bg {
+    #nav-menu {
       display: none;
     }
-
-    .menu-open .nav-menu {
+    .burger-menu {
+      display: block;
+      position: fixed;
+      left: 16px;
+      top: 8px;
+      z-index: 1000;
+    }
+    .header {
       display: block;
     }
   }
