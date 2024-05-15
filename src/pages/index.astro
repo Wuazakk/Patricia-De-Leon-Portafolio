@@ -2,15 +2,14 @@
 import Layout from "../layouts/Layout.astro";
 import DancerSection from "../components/DancerSection.astro";
 import { Image } from "astro:assets";
-import profileImg from "../../public/photos/homeprofile.png";
 import underquoteImg from "../../public/photos/underquote.webp";
 ---
 
 <Layout>
   <main>
     <div id="home" class="section min-h-screen">
-      <Image
-        src={profileImg}
+      <img
+        src="../photos/homeprofile.png"
         alt="home profile"
         loading="eager"
         class="home-profile max-h-[800px] max-w-[600px] mx-auto unselectable"
