@@ -1,15 +1,18 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DancerSection from "../components/DancerSection.astro";
-import NavBar from "../components/NavBar.astro";
+import { Image } from "astro:assets";
+import profileImg from "../../public/photos/homeprofile.png";
+import underquoteImg from "../../public/photos/underquote.webp";
 ---
 
 <Layout>
   <main>
     <div id="home" class="section min-h-screen">
-      <img
-        src="/photos/homeprofile.png"
-        alt="home profile photo"
+      <Image
+        src={profileImg}
+        alt="home profile"
+        loading="eager"
         class="home-profile max-h-[800px] max-w-[600px] mx-auto unselectable"
       />
       <div>
@@ -17,9 +20,10 @@ import NavBar from "../components/NavBar.astro";
           “And those who were seen dancing were thought to be insane by those
           who could not hear the music.”
         </p>
-        <img
-          src="/photos/underquotedark.webp"
+        <Image
+          src={underquoteImg}
           alt="underquote"
+          loading="eager"
           class="underquote mx-auto w-[700px] h-[300px] max-w-[90%] mt-4 unselectable"
         />
       </div>

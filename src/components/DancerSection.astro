@@ -1,78 +1,102 @@
+---
+import { Image } from "astro:assets";
+import img1 from "../../public/photos/1.jpg";
+import img2 from "../../public/photos/26.jpg";
+import img3 from "../../public/photos/18.jpg";
+import img4 from "../../public/photos/4.jpg";
+import img5 from "../../public/photos/22.jpg";
+import img6 from "../../public/photos/27.jpg";
+import img7 from "../../public/photos/7.jpg";
+import img8 from "../../public/photos/8.jpg";
+import img9 from "../../public/photos/10.jpg";
+import img10 from "../../public/photos/12.jpg";
+---
+
 <div class="grid grid-cols-2 md:grid-cols-4 gap-2 p-10">
   <div class="grid gap-2">
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/1.jpg"
+        src={img1}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/26.jpg"
+        src={img2}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/18.jpg"
-        alt="Me Dancing"
-      />
-    </div>
-  </div>
-  <div class="grid gap-2">
-    <div class="image-container">
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src="/photos/4.jpg"
-        alt="Me Dancing"
-      />
-    </div>
-    <div class="image-container">
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src="/photos/22.jpg"
-        alt="Me Dancing"
-      />
-    </div>
-    <div class="image-container">
-      <img
-        class="h-auto max-w-full rounded-lg"
-        src="/photos/27.jpg"
+        src={img3}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
   </div>
   <div class="grid gap-2">
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/7.jpg"
+        src={img4}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/8.jpg"
+        src={img5}
+        loading="lazy"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <Image
+        class="h-auto max-w-full rounded-lg"
+        src={img6}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
   </div>
   <div class="grid gap-2">
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/10.jpg"
+        src={img7}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
     <div class="image-container">
-      <img
+      <Image
         class="h-auto max-w-full rounded-lg"
-        src="/photos/12.jpg"
+        src={img8}
+        loading="lazy"
+        alt="Me Dancing"
+      />
+    </div>
+  </div>
+  <div class="grid gap-2">
+    <div class="image-container">
+      <Image
+        class="h-auto max-w-full rounded-lg"
+        src={img9}
+        loading="lazy"
+        alt="Me Dancing"
+      />
+    </div>
+    <div class="image-container">
+      <Image
+        class="h-auto max-w-full rounded-lg"
+        src={img10}
+        loading="lazy"
         alt="Me Dancing"
       />
     </div>
