@@ -3,11 +3,12 @@ import Layout from "../layouts/Layout.astro";
 import DancerSection from "../components/DancerSection.astro";
 import { Image } from "astro:assets";
 import underquoteImg from "../optimizedPhotos/underquote.webp";
+import DescriptionSection from "../components/DescriptionSection.astro";
 ---
 
 <Layout>
   <main>
-    <div id="home" class="section min-h-screen">
+    <section id="home" class="section">
       <img
         src="../photos/homeprofile.png"
         alt="home profile"
@@ -15,7 +16,7 @@ import underquoteImg from "../optimizedPhotos/underquote.webp";
         class="home-profile max-h-[800px] max-w-[600px] mx-auto unselectable"
       />
       <div>
-        <p class="text-2xl quote text-center opacity-80 mx-16">
+        <p class="text-3xl quote text-center opacity-80 mx-16">
           “And those who were seen dancing were thought to be insane by those
           who could not hear the music.”
         </p>
@@ -26,31 +27,43 @@ import underquoteImg from "../optimizedPhotos/underquote.webp";
           class="underquote mx-auto w-[700px] h-[300px] max-w-[90%] mt-4 unselectable"
         />
       </div>
-    </div>
-    <div id="dancer" class="section min-h-screen bg-white">
+    </section>
+    <section id="description" class="section min-h-screen">
+      <DescriptionSection />
+    </section>
+    <section id="dancer" class="section min-h-screen bg-white">
       <DancerSection />
-    </div>
-    <div id="teacher" class="section min-h-screen">
+    </section>
+    <section id="teacher" class="section min-h-screen">
       <h1 class="bg-slate-600">Teacher</h1>
       <p class="bg-slate-600">Welcome to the teacher page</p>
-    </div>
-    <div id="choreographer" class="section min-h-screen">
+    </section>
+    <section id="choreographer" class="section min-h-screen">
       <h1 class="bg-slate-600">Choreographer</h1>
       <p class="bg-slate-600">Welcome to the choreographer page</p>
-    </div>
-    <div id="about" class="section min-h-screen">
+    </section>
+    <section id="about" class="section min-h-screen">
       <h1 class="bg-slate-600">About</h1>
       <p class="bg-slate-600">Welcome to the about page</p>
-    </div>
+    </section>
   </main>
 </Layout>
 
 <style>
   #home {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.349)),
+    background-image: linear-gradient(
+        rgba(189, 123, 18, 0.749),
+        rgba(249, 213, 111, 0)
+      ),
       url("/photos/homebg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+
+    max-height: calc(100vh - 55px);
+  }
+
+  #description {
+    background-color: #228652;
   }
 
   #dancer {
@@ -65,9 +78,10 @@ import underquoteImg from "../optimizedPhotos/underquote.webp";
   }
 
   .quote {
-    font-family: "itim";
+    font-family: "Amatic SC";
     text-align: center;
-    color: black;
+    color: white;
+    opacity: 0.6;
   }
 
   .home-profile {
@@ -92,17 +106,9 @@ import underquoteImg from "../optimizedPhotos/underquote.webp";
     pointer-events: none;
   }
 
-  @font-face {
-    font-family: "itim";
-    src: url(/fonts/Itim-Regular.ttf) format("truetype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-
   @media (max-width: 768px) {
     #home {
-      padding-top: 10px;
+      padding-top: 25px;
     }
   }
 </style>
