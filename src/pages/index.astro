@@ -1,15 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DancerSection from "../components/DancerSection.astro";
-import { Image } from "astro:assets";
-import underquoteImg from "../optimizedPhotos/underquote.webp";
 import DescriptionSection from "../components/DescriptionSection.astro";
 import DancerInfoSection from "../components/DancerInfoSection.astro";
+import { Image } from "astro:assets";
+import line2 from "../optimizedPhotos/line2.png";
 ---
 
 <Layout>
   <main>
-    <section id="home" class="section">
+    <section id="home" class="section min-h-fit">
       <img
         src="../photos/homeprofile.png"
         alt="home profile"
@@ -21,21 +21,17 @@ import DancerInfoSection from "../components/DancerInfoSection.astro";
           “And those who were seen dancing were thought to be insane by those
           who could not hear the music.”
         </p>
-        <Image
-          src={underquoteImg}
-          alt="underquote"
-          loading="eager"
-          class="underquote mx-auto w-[700px] h-[300px] max-w-[90%] mt-4 unselectable"
-        />
       </div>
     </section>
-    <section id="description" class="section min-h-screen">
+    <section id="description" class="section min-h-fit">
+      <Image src={line2} alt="line" class="unselectable pt-8" />
       <DescriptionSection />
     </section>
     <section id="dancer" class="section min-h-screen bg-white">
       <DancerSection />
     </section>
     <section id="dancerInfo" class="section min-h-screen">
+      <Image src={line2} alt="line" class="unselectable pt-8" />
       <DancerInfoSection />
     </section>
     <section id="teacher" class="section min-h-screen">
@@ -62,7 +58,7 @@ import DancerInfoSection from "../components/DancerInfoSection.astro";
       background-repeat: no-repeat;
       background-size: cover;
 
-      max-height: calc(100vh - 55px);
+      max-height: fit-content;
     }
 
     #description {
@@ -81,26 +77,21 @@ import DancerInfoSection from "../components/DancerInfoSection.astro";
     }
 
     #dancerInfo {
-      background-color: #06604e;
+      background-color: #b8b7b7;
     }
 
     .quote {
       font-family: "Amatic SC";
-      text-align: center;
       color: white;
       opacity: 0.6;
+      position: relative;
+      top: -35px;
     }
 
     .home-profile {
       object-fit: cover;
       width: 100%;
       height: 500px;
-    }
-
-    .underquote {
-      object-fit: cover;
-      width: 100%;
-      height: 10%;
     }
 
     .unselectable {
@@ -111,12 +102,6 @@ import DancerInfoSection from "../components/DancerInfoSection.astro";
       -webkit-user-select: none;
       -ms-user-select: none;
       pointer-events: none;
-    }
-
-    @media (max-width: 768px) {
-      #home {
-        padding-top: 25px;
-      }
     }
   </style>
 </Layout>
