@@ -4,6 +4,7 @@ import DancerSection from "../components/DancerSection.astro";
 import { Image } from "astro:assets";
 import underquoteImg from "../optimizedPhotos/underquote.webp";
 import DescriptionSection from "../components/DescriptionSection.astro";
+import DancerInfoSection from "../components/DancerInfoSection.astro";
 ---
 
 <Layout>
@@ -34,6 +35,9 @@ import DescriptionSection from "../components/DescriptionSection.astro";
     <section id="dancer" class="section min-h-screen bg-white">
       <DancerSection />
     </section>
+    <section id="dancerInfo" class="section min-h-screen">
+      <DancerInfoSection />
+    </section>
     <section id="teacher" class="section min-h-screen">
       <h1 class="bg-slate-600">Teacher</h1>
       <p class="bg-slate-600">Welcome to the teacher page</p>
@@ -47,68 +51,72 @@ import DescriptionSection from "../components/DescriptionSection.astro";
       <p class="bg-slate-600">Welcome to the about page</p>
     </section>
   </main>
-</Layout>
 
-<style>
-  #home {
-    background-image: linear-gradient(
-        rgba(189, 123, 18, 0.749),
-        rgba(249, 213, 111, 0)
-      ),
-      url("/photos/homebg.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    max-height: calc(100vh - 55px);
-  }
-
-  #description {
-    background-color: #228652;
-  }
-
-  #dancer {
-    background-image: linear-gradient(
-        rgba(0, 0, 0, 0.822),
-        rgba(39, 37, 37, 0.541)
-      ),
-      url("/photos/sketchbg.webp");
-    height: fit-content;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-  .quote {
-    font-family: "Amatic SC";
-    text-align: center;
-    color: white;
-    opacity: 0.6;
-  }
-
-  .home-profile {
-    object-fit: cover;
-    width: 100%;
-    height: 500px;
-  }
-
-  .underquote {
-    object-fit: cover;
-    width: 100%;
-    height: 10%;
-  }
-
-  .unselectable {
-    user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    pointer-events: none;
-  }
-
-  @media (max-width: 768px) {
+  <style>
     #home {
-      padding-top: 25px;
+      background-image: linear-gradient(
+          rgba(189, 123, 18, 0.749),
+          rgba(249, 213, 111, 0)
+        ),
+        url("/photos/homebg.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      max-height: calc(100vh - 55px);
     }
-  }
-</style>
+
+    #description {
+      background-color: #b8b7b7;
+    }
+
+    #dancer {
+      background-image: linear-gradient(
+          rgba(0, 0, 0, 0.822),
+          rgba(39, 37, 37, 0.541)
+        ),
+        url("/photos/sketchbg.webp");
+      height: fit-content;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    #dancerInfo {
+      background-color: #06604e;
+    }
+
+    .quote {
+      font-family: "Amatic SC";
+      text-align: center;
+      color: white;
+      opacity: 0.6;
+    }
+
+    .home-profile {
+      object-fit: cover;
+      width: 100%;
+      height: 500px;
+    }
+
+    .underquote {
+      object-fit: cover;
+      width: 100%;
+      height: 10%;
+    }
+
+    .unselectable {
+      user-drag: none;
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-drag: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      #home {
+        padding-top: 25px;
+      }
+    }
+  </style>
+</Layout>

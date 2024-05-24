@@ -1,8 +1,4 @@
----
-
----
-
-<div class="header h-[55px]">
+<div class="header h-[55px]" id="start">
   <h1 class="text-md text-center pt-4">PATRICIA DE LEÓN</h1>
 </div>
 <div class="burger-menu">
@@ -22,28 +18,39 @@
   </label>
 </div>
 <script>
-  const burgerChecked = document.getElementById("burger");
-  if (burgerChecked instanceof HTMLElement) {
-    burgerChecked.addEventListener("change", () => {
-      if (burgerChecked instanceof HTMLInputElement && burgerChecked.checked) {
-        const navMenu = document.getElementById("nav-menu");
-        const navIcon = document.getElementsByClassName("nav-icon");
-        if (navMenu !== null) {
+  // NavBar functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const burgerChecked = document.getElementById("burger");
+    const navMenu = document.getElementById("nav-menu");
+    const navIcons = document.getElementsByClassName("nav-icon");
+
+    if (
+      burgerChecked instanceof HTMLInputElement &&
+      navMenu &&
+      navIcons.length > 0
+    ) {
+      burgerChecked.addEventListener("change", () => {
+        if (burgerChecked.checked) {
           navMenu.classList.add("show");
-          navIcon[0].setAttribute("src", "/icons/close-bold.svg");
-        }
-      } else {
-        const navMenu = document.getElementById("nav-menu");
-        const navIcon = document.getElementsByClassName("nav-icon");
-        if (navMenu !== null) {
+          navIcons[0].setAttribute("src", "/icons/close-bold.svg");
+        } else {
           navMenu.classList.remove("show");
-          navIcon[0].setAttribute("src", "/icons/burger-menu-black.svg");
+          navIcons[0].setAttribute("src", "/icons/burger-menu-black.svg");
         }
+      });
+
+      const navLinks = navMenu.getElementsByTagName("a");
+      for (let link of navLinks) {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("show");
+          burgerChecked.checked = false;
+          navIcons[0].setAttribute("src", "/icons/burger-menu-black.svg");
+        });
       }
-    });
-  } else {
-    console.error("Burger menu not found");
-  }
+    } else {
+      console.error("Burger menu or nav menu not found");
+    }
+  });
 </script>
 <div
   id="nav-menu"

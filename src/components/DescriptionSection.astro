@@ -1,2 +1,40 @@
-<h1 class="text-4xl text-center"></h1>
-<p class="text-center"></p>
+---
+import { Image } from "astro:assets";
+import dance from "../optimizedPhotos/dance.png";
+---
+
+<div class="description">
+  <h1>Passion in Motion</h1>
+  <p>
+    Dance is more than just a series of steps and movements; it is a profound
+    form of expression that captures the essence of human emotion and
+    experience. For me, dance is a language that transcends words, a way to tell
+    stories and convey feelings that are often indescribable.
+  </p>
+  <Image src={dance} alt="Dance" width="500" height="300" />
+</div>
+
+<style>
+  h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: "Lora";
+    color: black;
+    font-weight: bold;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 2rem;
+    font-family: "Lora";
+    color: black;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    padding: 1.5rem;
+  }
+</style>
