@@ -5,11 +5,13 @@ import DescriptionSection from "../components/DescriptionSection.astro";
 import DancerInfoSection from "../components/DancerInfoSection.astro";
 import { Image } from "astro:assets";
 import line2 from "../optimizedPhotos/line2.png";
+import Teacher from "../components/Teacher.astro";
+import TeacherInfo from "../components/TeacherInfo.astro";
 ---
 
 <Layout>
   <main>
-    <section id="home" class="section min-h-fit">
+    <section id="home" class="section min-h-screen">
       <img
         src="../photos/homeprofile.png"
         alt="home profile"
@@ -35,8 +37,8 @@ import line2 from "../optimizedPhotos/line2.png";
       <DancerInfoSection />
     </section>
     <section id="teacher" class="section min-h-screen">
-      <h1 class="bg-slate-600">Teacher</h1>
-      <p class="bg-slate-600">Welcome to the teacher page</p>
+      <Image src={line2} alt="line" class="unselectable pt-8" />
+      <Teacher />
     </section>
     <section id="choreographer" class="section min-h-screen">
       <h1 class="bg-slate-600">Choreographer</h1>
@@ -80,12 +82,12 @@ import line2 from "../optimizedPhotos/line2.png";
       background-color: #b8b7b7;
     }
 
+    #teacher {
+      background-color: #b8b7b7;
+    }
     .quote {
-      font-family: "Amatic SC";
+      font-family: "montserrat";
       color: white;
-      opacity: 0.6;
-      position: relative;
-      top: -35px;
     }
 
     .home-profile {
@@ -102,6 +104,13 @@ import line2 from "../optimizedPhotos/line2.png";
       -webkit-user-select: none;
       -ms-user-select: none;
       pointer-events: none;
+    }
+
+    @media (max-height: 800px) {
+      .quote {
+        position: relative;
+        top: -55px;
+      }
     }
   </style>
 </Layout>
