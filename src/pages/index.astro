@@ -6,6 +6,8 @@ import DancerInfoSection from "../components/DancerInfoSection.astro";
 import { Image } from "astro:assets";
 import line2 from "../optimizedPhotos/line2.png";
 import Teacher from "../components/Teacher.astro";
+import flat from "../optimizedPhotos/flat.png";
+import ChoreographerSection from "../components/ChoreographerSection.astro";
 ---
 
 <Layout>
@@ -36,12 +38,13 @@ import Teacher from "../components/Teacher.astro";
       <DancerInfoSection />
     </section>
     <section id="teacher" class="section min-h-screen">
+      <Image src={flat} alt="teacher" />
       <Image src={line2} alt="line" class="unselectable pt-8" />
       <Teacher />
     </section>
     <section id="choreographer" class="section min-h-screen">
-      <h1 class="bg-slate-600">Choreographer</h1>
-      <p class="bg-slate-600">Welcome to the choreographer page</p>
+      <Image src={line2} alt="line" class="unselectable pt-8" />
+      <ChoreographerSection />
     </section>
     <section id="about" class="section min-h-screen">
       <h1 class="bg-slate-600">About</h1>
@@ -84,9 +87,14 @@ import Teacher from "../components/Teacher.astro";
     #teacher {
       background-color: #b8b7b7;
     }
+
+    #choreographer {
+      background-color: #b8b7b7;
+    }
+
     .quote {
       font-family: "montserrat";
-      color: white;
+      color: black;
     }
 
     .home-profile {
