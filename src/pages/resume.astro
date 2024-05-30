@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="resume-container">
+    <div class="header">
+      <h1>Patricia De León</h1>
+      <p>
+        Artist | john.doe@example.com | (123) 456-7890 | LinkedIn:
+        linkedin.com/in/patriciadeleon
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Professional Summary</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+        laboriosam amet ad quas rerum, necessitatibus sequi tempora dicta porro
+        sit, corporis ducimus facilis suscipit consequatur harum libero et odio
+        cum!
+      </p>
+    </div>
+
+    <div class="section education">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Master of Science in Computer Science</h3>
+        <span>University of Technology, 2015 - 2017</span>
+      </div>
+      <div class="item">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <span>City University, 2011 - 2015</span>
+      </div>
+    </div>
+
+    <div class="section experience">
+      <h2>Professional Experience</h2>
+      <div class="item">
+        <h3>Senior Web Developer</h3>
+        <span>Tech Solutions Inc., 2019 - Present</span>
+        <p>
+          Lead a team of developers in creating and maintaining high-traffic
+          websites and web applications. Implemented new features and optimized
+          existing ones to improve performance and user experience.
+        </p>
+      </div>
+      <div class="item">
+        <h3>Web Developer</h3>
+        <span>Creative Web Agency, 2017 - 2019</span>
+        <p>
+          Developed and maintained websites for a variety of clients using HTML,
+          CSS, JavaScript, and PHP. Collaborated with designers to ensure
+          websites were visually appealing and user-friendly.
+        </p>
+      </div>
+    </div>
+
+    <div class="section skills">
+      <h2>Skills</h2>
+      <div class="item">
+        <p>
+          HTML, CSS, JavaScript, React, Angular, Node.js, PHP, MySQL, Git, Agile
+          Methodologies
+        </p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+    background-color: #b4b2b0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #333;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
+  .header p {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+  .section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  .section:last-child {
+    border-bottom: none;
+  }
+  .section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+  }
+  .section p {
+    margin: 5px 0;
+  }
+  .education,
+  .experience,
+  .skills {
+    padding: 10px 0;
+  }
+  .education .item,
+  .experience .item,
+  .skills .item {
+    margin-bottom: 20px;
+  }
+  .item h3 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  .item span {
+    display: block;
+    font-size: 1.2em;
+    color: #666;
+  }
+</style>

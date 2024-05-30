@@ -1,0 +1,104 @@
+---
+import { imageConfig } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import profile1 from "../optimizedPhotos/perfil1.jpg";
+---
+
+<Layout>
+  <section class="about-section">
+    <div class="about-overlay">
+      <div class="about-image">
+        <Image src={profile1} alt="profile picture" />
+        <!-- Add your profile photo URL -->
+      </div>
+      <div class="about-content">
+        <h1>About Me</h1>
+        <p>
+          Hello! I am [Your Name], a passionate [Your Profession] with a
+          dedication to [your specific interest or field]. With over [number]
+          years of experience in the industry, I have honed my skills in [list a
+          few key skills or areas of expertise].
+        </p>
+        <p>
+          I believe in continuous learning and growth, and I strive to bring the
+          best of my abilities to every project I undertake. My journey has been
+          driven by a deep love for dancing, and I am committed to making a
+          positive impact through my work.
+        </p>
+        <div class="contact-info">
+          <p>
+            Feel free to reach out to me at: <a
+              href="mailto:your.email@example.com">patsdeleon@gmail.com</a
+            >
+          </p>
+          <p>
+            Connect with me on <a
+              href="https://www.linkedin.com/in/patricia-de-le%C3%B3n-fern%C3%A1ndez-256660256/"
+              target="_blank">LinkedIn</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.675),
+        rgba(39, 37, 37, 0.525)
+      ),
+      url("/photos/sketchbg.webp");
+    height: fit-content;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    color: #fff;
+  }
+  .about-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    width: 100%;
+  }
+  .about-image {
+    flex: 1 1 300px;
+    max-width: 300px;
+    margin: 20px;
+  }
+  .about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .about-content {
+    flex: 2 1 400px;
+    max-width: 600px;
+    margin: 20px;
+  }
+  .about-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  .about-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .about-content .contact-info a {
+    text-decoration: none;
+    color: #ffdd57; /* Highlight color for links */
+    font-weight: bold;
+  }
+</style>
