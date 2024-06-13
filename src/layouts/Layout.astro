@@ -94,4 +94,29 @@ import NavBar from "../components/NavBar.astro";
     font-weight: 700;
     font-style: normal;
   }
+  .dot-container {
+    position: absolute;
+    bottom: 5px; /* Adjust this value to position the dots */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: flex;
+    justify-content: center; /* Center dots horizontally */
+    align-items: center; /* Center dots vertically */
+    z-index: 1; /* Ensure dots are above the image */
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 5px; /* Adjust this value to increase/decrease space between dots */
+    background-color: #bbb; /* Default color of dots */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for active dot */
+  }
+
+  .dot.active {
+    background-color: #555; /* Color of active dot */
+  }
 </style>

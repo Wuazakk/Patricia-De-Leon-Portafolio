@@ -1,0 +1,212 @@
+---
+import { Image } from "astro:assets";
+import t1 from "../optimizedPhotos/t1.jpg";
+import t2 from "../optimizedPhotos/t2.jpg";
+import t4 from "../optimizedPhotos/t4.jpg";
+---
+
+<div id="body">
+  <astro-heart class="gallery">
+    <div class="gallery-wrapper">
+      <div class="gallery-slide">
+        <Image src={t1} alt="Image 1" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+      <div class="gallery-slide">
+        <Image src={t2} alt="Image 2" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+      <div class="gallery-slide">
+        <Image src={t4} alt="Image 4" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </astro-heart>
+</div>
+
+<script>
+  class AstroHeart extends HTMLElement {
+    constructor() {
+      super();
+
+      let slideIndex = 0; // Initialize slideIndex here as a global variable
+
+      const showSlides = () => {
+        const slides = document.querySelectorAll(".gallery-slide");
+        const prevButton = this.querySelector(".prev");
+        const nextButton = this.querySelector(".next");
+        const dotContainer = document.createElement("div"); // Container for dots
+        dotContainer.classList.add("dot-container");
+        this.appendChild(dotContainer); // Append dot container to astro-heart element
+
+        let autoAdvanceInterval: number; // Variable to store the interval ID
+
+        const n = 1;
+
+        const showNextSlide = () => {
+          slideIndex += n;
+          if (slideIndex >= slides.length) {
+            slideIndex = 0;
+          }
+          updateSlides();
+        };
+
+        const startAutoAdvance = () => {
+          autoAdvanceInterval = setInterval(showNextSlide, 5000);
+        };
+
+        const stopAutoAdvance = () => {
+          clearInterval(autoAdvanceInterval);
+        };
+
+        prevButton?.addEventListener("click", () => {
+          slideIndex -= n;
+          if (slideIndex < 0) {
+            slideIndex = slides.length - 1;
+          }
+          updateSlides();
+        });
+
+        nextButton?.addEventListener("click", () => {
+          showNextSlide();
+        });
+
+        const updateSlides = () => {
+          const dots = dotContainer.querySelectorAll(".dot"); // Get dot elements
+          slides.forEach((slide, index) => {
+            const slideElement = slide as HTMLElement;
+            slideElement.style.transform = `translateX(${-slideIndex * 100}%)`;
+
+            // Update dot styles
+            dots[index].classList.remove("active");
+            if (index === slideIndex) {
+              dots[index].classList.add("active");
+            }
+          });
+        };
+
+        // Create dots dynamically
+        for (let i = 0; i < slides.length; i++) {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          dot.addEventListener("click", () => {
+            slideIndex = i;
+            updateSlides();
+          });
+          dotContainer.appendChild(dot);
+        }
+
+        startAutoAdvance(); // Start auto-advancing initially
+
+        // Touch event handlers
+        let touchStartX: number;
+        let touchEndX: number;
+        const threshold = 50; // Minimum distance to detect swipe
+
+        this.addEventListener("touchstart", (event) => {
+          touchStartX = event.touches[0].clientX;
+          stopAutoAdvance(); // Stop auto-advancing when user starts swiping
+        });
+
+        this.addEventListener("touchmove", (event) => {
+          touchEndX = event.touches[0].clientX;
+        });
+
+        this.addEventListener("touchend", () => {
+          const diff = touchEndX - touchStartX;
+          if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+              // Swiped right
+              slideIndex -= n;
+              if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+              }
+            } else {
+              // Swiped left
+              showNextSlide();
+            }
+            updateSlides();
+          }
+          startAutoAdvance(); // Start auto-advancing again after swipe
+        });
+
+        updateSlides();
+      };
+
+      showSlides();
+    }
+  }
+
+  customElements.define("astro-heart", AstroHeart);
+</script>
+
+<style>
+  #body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  .gallery {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .gallery-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .gallery-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  @media (max-width: 768px) {
+    .prev,
+    .next {
+      font-size: 12px;
+      padding: 12px;
+    }
+  }
+</style>

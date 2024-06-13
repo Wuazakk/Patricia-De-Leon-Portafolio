@@ -5,9 +5,10 @@ import DescriptionSection from "../components/DescriptionSection.astro";
 import DancerInfoSection from "../components/DancerInfoSection.astro";
 import { Image } from "astro:assets";
 import line2 from "../optimizedPhotos/line2.png";
-import Teacher from "../components/Teacher.astro";
+import TeacherSection from "../components/TeacherSection.astro";
 import flat from "../optimizedPhotos/flat.png";
 import ChoreographerSection from "../components/ChoreographerSection.astro";
+import Gallery from "../components/Gallery.astro";
 ---
 
 <Layout>
@@ -37,11 +38,13 @@ import ChoreographerSection from "../components/ChoreographerSection.astro";
     <section id="dancerInfo" class="section min-h-screen">
       <Image src={line2} alt="line" class="unselectable pt-8" />
       <DancerInfoSection />
-      <Image src={flat} alt="teacher" />
+    </section>
+    <section id="gallery" class="section bg-orange-200 opacity-80">
+      <Gallery />
     </section>
     <section id="teacher" class="section min-h-screen">
       <Image src={line2} alt="line" class="unselectable pt-8" />
-      <Teacher />
+      <TeacherSection />
     </section>
     <section id="choreographer" class="section min-h-screen">
       <Image src={line2} alt="line" class="unselectable pt-8" />
@@ -63,7 +66,9 @@ import ChoreographerSection from "../components/ChoreographerSection.astro";
     }
 
     #description {
-      background-color: #b8b7b7;
+      background-color: white;
+      background-image: none,
+        linear-gradient(rgba(0, 0, 0, 0.261), rgba(39, 37, 37, 0));
     }
 
     #dancer {
@@ -78,15 +83,15 @@ import ChoreographerSection from "../components/ChoreographerSection.astro";
     }
 
     #dancerInfo {
-      background-color: #b8b7b7;
+      background-color: white;
     }
 
     #teacher {
-      background-color: #aaa7a6;
+      background-color: white;
     }
 
     #choreographer {
-      background-color: #b8b7b7;
+      background-color: white;
     }
 
     blockquote {
