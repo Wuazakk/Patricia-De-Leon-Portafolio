@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import t1 from "../optimizedPhotos/t1.jpg";
 import t2 from "../optimizedPhotos/t2.jpg";
 import t4 from "../optimizedPhotos/t4.jpg";
+import t5 from "../optimizedPhotos/t5.jpg";
+import t7 from "../optimizedPhotos/t7.jpg";
+import t9 from "../optimizedPhotos/t9.jpg";
 ---
 
 <div id="body">
@@ -18,6 +21,18 @@ import t4 from "../optimizedPhotos/t4.jpg";
       </div>
       <div class="gallery-slide">
         <Image src={t4} alt="Image 4" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+      <div class="gallery-slide">
+        <Image src={t5} alt="Image 4" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+      <div class="gallery-slide">
+        <Image src={t7} alt="Image 4" class="gallery-img" />
+        <div class="dot-container"></div>
+      </div>
+      <div class="gallery-slide">
+        <Image src={t9} alt="Image 4" class="gallery-img" />
         <div class="dot-container"></div>
       </div>
     </div>
@@ -67,10 +82,12 @@ import t4 from "../optimizedPhotos/t4.jpg";
             slideIndex = slides.length - 1;
           }
           updateSlides();
+          stopAutoAdvance();
         });
 
         nextButton?.addEventListener("click", () => {
           showNextSlide();
+          stopAutoAdvance();
         });
 
         const updateSlides = () => {
@@ -99,38 +116,6 @@ import t4 from "../optimizedPhotos/t4.jpg";
         }
 
         startAutoAdvance(); // Start auto-advancing initially
-
-        // Touch event handlers
-        let touchStartX: number;
-        let touchEndX: number;
-        const threshold = 50; // Minimum distance to detect swipe
-
-        this.addEventListener("touchstart", (event) => {
-          touchStartX = event.touches[0].clientX;
-          stopAutoAdvance(); // Stop auto-advancing when user starts swiping
-        });
-
-        this.addEventListener("touchmove", (event) => {
-          touchEndX = event.touches[0].clientX;
-        });
-
-        this.addEventListener("touchend", () => {
-          const diff = touchEndX - touchStartX;
-          if (Math.abs(diff) > threshold) {
-            if (diff > 0) {
-              // Swiped right
-              slideIndex -= n;
-              if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
-              }
-            } else {
-              // Swiped left
-              showNextSlide();
-            }
-            updateSlides();
-          }
-          startAutoAdvance(); // Start auto-advancing again after swipe
-        });
 
         updateSlides();
       };
@@ -165,7 +150,7 @@ import t4 from "../optimizedPhotos/t4.jpg";
   .gallery-slide {
     min-width: 100%;
     box-sizing: border-box;
-    height: 300px;
+    height: 400px;
     overflow: hidden;
     position: relative;
   }
@@ -182,11 +167,11 @@ import t4 from "../optimizedPhotos/t4.jpg";
     position: absolute;
     top: 50%;
     width: auto;
-    padding: 16px;
+    padding: 10px;
     margin-top: -22px;
-    color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 2rem;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
@@ -197,16 +182,11 @@ import t4 from "../optimizedPhotos/t4.jpg";
     border-radius: 3px 0 0 3px;
   }
 
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-
   @media (max-width: 768px) {
     .prev,
     .next {
-      font-size: 12px;
-      padding: 12px;
+      font-size: 20px;
+      padding: 20px;
     }
   }
 </style>

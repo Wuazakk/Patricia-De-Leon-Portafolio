@@ -1,12 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import c1 from "../optimizedPhotos/c1.jpg";
-import c2 from "../optimizedPhotos/c2.jpg";
-import c3 from "../optimizedPhotos/c3.jpg";
+
 ---
 
 <div class="dancerInfo flex flex-col">
-  <h1>Choreographer</h1>
+  <h2>Choreographer</h2>
   <p>
     Welcome to the choreographer info page Lorem ipsum dolor sit amet,
     consectetur adipiscing elit. Curabitur sem nunc, molestie sed hendrerit a,
@@ -15,22 +12,9 @@ import c3 from "../optimizedPhotos/c3.jpg";
     ligula quis convallis. Nam et ullamcorper lectus. Donec sed leo nisi. In hac
     habitasse platea dictumst.
   </p>
-  <Image src={c1} alt="choreographer" class="choreographerCard" />
-  <p>
-    Donec eu nunc molestie, congue justo ac, lobortis leo. Quisque dolor justo,
-    hendrerit nec sodales non, aliquam eleifend turpis. Lorem ipsum dolor sit
-    amet, consectetur adipiscing elit. Curabitur sem nunc, molestie sed
-    hendrerit a, egestas id quam. In sit amet blandit purus, sed gravida enim.
-    Vestibulum quis elit tristique, euismod nisi vel, gravida elit. Pellentesque
-    cursus ac ligula quis convallis. Nam et ullamcorper lectus. Donec sed leo
-    nisi. In hac habitasse platea dictumst. Donec eu nunc molestie, congue justo
-    ac, lobortis leo. Quisque dolor justo, hendrerit nec sodales non, aliquam
-    eleifend turpis.
-  </p>
-  <Image src={c2} alt="choreographer" class="choreographerCard" />
 </div>
 <style>
-  h1 {
+  h2 {
     font-size: 2rem;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
     font-family: "Lora";
@@ -50,14 +34,5 @@ import c3 from "../optimizedPhotos/c3.jpg";
 
   .dancerInfo {
     padding: 1.5rem;
-  }
-
-  .choreographerCard {
-    width: 100%;
-    height: auto;
-    margin-bottom: 30px;
-    border-radius: 5%;
-
-    box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.5);
   }
 </style>
